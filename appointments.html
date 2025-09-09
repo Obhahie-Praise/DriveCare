@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointments</title>
+    <link rel="icon" href="images/title icon.png">
+    <link rel="stylesheet" href="styles/animations/animations.css">
+    <link rel="stylesheet" href="styles/utils/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap');
+    </style>
+</head>
+<body class="bg-black">
+    <div class="mx-auto container">
+        <header class="text-white text-3xl py-4 text-center" id="large-text">
+            Book Appointment
+        </header>
+
+        <main class="mx-10 lg:mx-64 xl:mx-96">
+            <form action="https://formspree.io/f/meolnoad" method="post" class="mt-5" id="appointment-form">
+
+                <div class="text-white text-lg flex flex-col gap-y-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="name">Full Name</label>
+                        <input name="name" class="border-2 border-gray-300 text-lg rounded-md placeholder:text-gray-400 py-2 pl-2 mx-2" placeholder="Full Name" type="text" id="name" required>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="email">Email</label>
+                        <input name="email" class="border-2 border-gray-300 text-lg rounded-md placeholder:text-gray-400 py-2 pl-2 mx-2" placeholder="you@example.com" type="email" id="email" required>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="phone">Phone Number</label>
+                        <input name="phone" class="border-2 border-gray-300 text-lg rounded-md placeholder:text-gray-400 py-2 pl-2 mx-2" placeholder="Phone Number" type="tel" id="phone" required>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="date">Pick suitable appointment date/time</label>
+                        <input name="date" class="border-2 border-gray-300 text-lg rounded-md placeholder:text-gray-400 py-2 pl-2 mx-2" type="datetime-local" id="date" required>
+                    </div>
+                    <div class="text-white text-lg flex flex-col gap-y-3 mt-5 ">
+                        <label for="vehicle" class="">What car are you bringing?</label>
+                        <input type="text" id="vehicle" class="border-2 border-gray-300 text-lg rounded-md placeholder:text-gray-400 py-2 pl-2 mx-4" placeholder="Car Brand & Model e.g Toyota Sienna" required>
+                    </div>
+
+                    <div class="text-white text-lg flex flex-col gap-y-3 mt-5 ">
+                        <label for="licence-plate" class="">Licence Plate</label>
+                        <input type="text" id="licence-plate" class="border-2 border-gray-300 text-lg rounded-md placeholder:text-gray-400 py-2 pl-2 mx-4" placeholder="Car Licence Plate" required>
+                    </div>
+                </div>
+
+                <div class="mt-20">
+                    <p class="text-white text-2xl py-3">What are you coming for?</p>
+                    <div class="flex justify-evenly gap-x-6">
+                        <div class="flex flex-col items-center">
+                            <input class="hidden" type="radio" name="purpose" value="maintainance" id="maintainance" required>
+                            <label for="maintainance" onclick="maintainancePurpose()"><img class="w-16 p-1 border-2 border-slate-800 rounded-md" src="images/icons/maintainance_icon.png" alt=""></label>
+                            <p class="text-white text-base text-center">Maintainance</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <input class="hidden" type="radio" name="purpose" value="repair" id="repair" required>
+                            <label for="repair" onclick="repairPurpose()"><img src="images/icons/repair_icon.png" alt="" class="w-16 p-1 border-2 border-slate-800 rounded-md"></label>
+                            <p class="text-white text-base text-center">Repair</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <input class="hidden" type="radio" name="purpose" value="customization" id="customization" required>
+                            <label for="customization" onclick="customizationPurpose()"><img src="images/icons/customizable icon.png" alt="" class="w-16 p-1 border-2 border-slate-800 rounded-md"></label>
+                            <p class="text-white text-base text-center">Customization</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <input class="hidden" type="radio" name="purpose" value="tuning" id="tuning" required>
+                            <label for="tuning" onclick="tuningPurpose()"><img src="images/icons/tuning_icon.png" alt="" class="w-16 p-1 border-2 border-slate-800 rounded-md"></label>
+                            <p class="text-white text-base text-center">Tuning</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="h-4 text-white mt-10 -mx-4">
+
+                
+
+                    <div class="js-form-section">
+                        
+                    </div>
+
+                <div class="mt-12 text-white">
+                    <label class="text-2xl" for="extra-messasge">Anything Extra? Let Us Know</label>
+                    <textarea class="mt-2 mx-4 text-white border-2 border-gray-300 text-lg rounded-md placeholder:text-gray-400 py-2 pl-2 h-48 w-full" placeholder="Extra..." name="extra-messasge" id="extra-messasge"></textarea>
+                </div>
+
+                <div class="flex justify-center mt-10 mb-5">
+                    <button id="appointment-submit-btn" type="submit" class="text-white font-semibold px-6 py-3 border-none bg-slate-400 hover:bg-slate-300 rounded-lg">Book appointment <i class="ri-send-plane-fill text-lg text-white font-semibold"></i></button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="scripts/appiontment.js"></script>
+</body>
+</html>

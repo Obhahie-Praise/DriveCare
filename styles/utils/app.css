@@ -1,0 +1,20 @@
+* {
+    font-family: 'Open Sans', monospace;
+}
+
+#large-text {
+    font-family: 'Righteous';
+    letter-spacing: 4px;
+}
+
+#nav-menu-visible {
+    display: flex;
+}
+
+#nav-menu-hidden {
+    display: none;
+}
+
+#toggle-nav {
+    display: none;
+}
